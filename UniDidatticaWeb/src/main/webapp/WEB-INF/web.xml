@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <display-name>UniDidatticaWeb</display-name>
+
+    <welcome-file-list>
+        <welcome-file>Access.jsp</welcome-file>
+    </welcome-file-list>
+    
+    <!-- Servlet Configuration -->
+    <servlet>
+        <servlet-name>AccessServlet</servlet-name>
+        <servlet-class>webapp.AccessServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AccessServlet</servlet-name>
+        <url-pattern>/AccessServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>UserLoginServlet</servlet-name>
+        <servlet-class>webapp.UserLoginServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserLoginServlet</servlet-name>
+        <url-pattern>/UserLoginServlet</url-pattern>
+    </servlet-mapping>	
+
+	<servlet>
+        <servlet-name>StaffLoginServlet</servlet-name>
+        <servlet-class>webapp.StaffLoginServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>StaffLoginServlet</servlet-name>
+        <url-pattern>/StaffLoginServlet</url-pattern>
+    </servlet-mapping>	
+    
+    <servlet>
+        <servlet-name>StaffHomepageServlet</servlet-name>
+        <servlet-class>webapp.StaffHomepageServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>StaffHomepageServlet</servlet-name>
+        <url-pattern>/StaffHomepageServlet</url-pattern>
+    </servlet-mapping>	
+    
+    <servlet>
+        <servlet-name>InsertProgramServlet</servlet-name>
+        <servlet-class>webapp.InsertProgramServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>InsertProgramServlet</servlet-name>
+        <url-pattern>/InsertProgramServlet</url-pattern>
+    </servlet-mapping>	
+    
+    <servlet>
+        <servlet-name>UserHomepageServlet</servlet-name>
+        <servlet-class>webapp.UserHomepageServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserHomepageServlet</servlet-name>
+        <url-pattern>/UserHomepageServlet</url-pattern>
+    </servlet-mapping>	
+    
+    <servlet>
+        <servlet-name>EnrollmentServlet</servlet-name>
+        <servlet-class>webapp.EnrollmentServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>EnrollmentServlet</servlet-name>
+        <url-pattern>/EnrollmentServlet</url-pattern>
+    </servlet-mapping>	
+    
+    <servlet>
+    <servlet-name>ExamDetailsServlet</servlet-name>
+    <servlet-class>webapp.ExamDetailsServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+	    <servlet-name>ExamDetailsServlet</servlet-name>
+	    <url-pattern>/ExamDetailsServlet</url-pattern>
+	</servlet-mapping>
+    
+    <servlet>
+    <servlet-name>TuitionServlet</servlet-name>
+    <servlet-class>webapp.TuitionServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+	    <servlet-name>TuitionServlet</servlet-name>
+	    <url-pattern>/TuitionServlet</url-pattern>
+	</servlet-mapping>
+    
+
+</web-app>
