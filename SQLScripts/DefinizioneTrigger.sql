@@ -15,7 +15,7 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20001, 'Specified year not valid.');
     END IF;
 END;
-
+/
 
 
 
@@ -43,7 +43,7 @@ BEGIN
     END IF;
 
 END;
-
+/
 
 
 
@@ -56,7 +56,7 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20001, 'Credits superior to the upper bound 12');
     END IF;
 END;
-
+/
 
 
 
@@ -69,7 +69,7 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20001, 'Date inconsistency: the end date cannot be before the start date');
     END IF;
 END;
-
+/
 
 
 
@@ -85,7 +85,7 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20001, 'The date of the exam is not valid');
     END IF;
 END;
-
+/
 
 
 
@@ -101,7 +101,7 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20001, 'Mark superior to the upper bound 1');
     END IF;
 END;
-
+/
 
 
 
@@ -114,7 +114,7 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20001, 'Error in flag insertion');
     END IF;
 END;
-
+/
 
 
 
@@ -144,7 +144,7 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20001, 'Operation not allowed: student and course must be of the same Department');
     END IF;
 END;
-
+/
 
 
 
@@ -166,7 +166,7 @@ BEGIN
     END IF;
 
 END;
-
+/
 
 
 
@@ -192,7 +192,7 @@ BEGIN
         END LOOP;
     END IF;
 END;
-
+/
 
 
 
@@ -205,7 +205,7 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20001, 'Error in flag insertion');
     END IF;
 END;
-
+/
 
 
 
@@ -222,7 +222,7 @@ BEGIN
     );
 
 END;
-
+/
 
 
 
@@ -239,7 +239,7 @@ BEGIN
     );
 
 END;
-
+/
 
 
 
@@ -256,7 +256,7 @@ BEGIN
     );
 
 END;
-
+/
 
 
 
@@ -273,7 +273,7 @@ BEGIN
     );
 
 END;
-
+/
 
 
 
@@ -290,7 +290,7 @@ BEGIN
     );
 
 END;
-
+/
 
 
 
@@ -307,7 +307,7 @@ BEGIN
     );
 
 END;
-
+/
 
 
 
@@ -324,7 +324,7 @@ BEGIN
     );
 
 END;
-
+/
 
 
 
@@ -341,7 +341,7 @@ BEGIN
     );
 
 END;
-
+/
 
 
 
@@ -358,7 +358,7 @@ BEGIN
     );
 
 END;
-
+/
 
 
 
@@ -382,7 +382,7 @@ BEGIN
         dbms_output.put_line('Teacher ' || v_teacher.matriculation || ' has been updated');
     END IF;
 END;
-
+/
 
 
 create or replace TRIGGER ModifyCourseNullPrerequisites
@@ -394,7 +394,7 @@ BEGIN
     SET Prerequisites = CourseArrayType()
     WHERE Prerequisites IS NULL;
 END;
-
+/
 
 
 
@@ -417,7 +417,7 @@ BEGIN
     END IF;
 
 END;
-
+/
 
 
 
@@ -439,7 +439,7 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20001, 'Duplicate enrollment: this student is already enrolled in the same ExtraActivity.');
     END IF;
 END;
-
+/
 
 
 
@@ -450,3 +450,4 @@ BEGIN
     INSERT INTO TempDeletedStudents (matriculation) 
     VALUES (:OLD.matriculation);
 END;
+/
