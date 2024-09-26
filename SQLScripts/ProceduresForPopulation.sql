@@ -36,7 +36,7 @@ BEGIN
 	END LOOP;
 
 END;
-
+/
 
 
 
@@ -79,7 +79,7 @@ BEGIN
 	END LOOP;
 
 END;
-
+/
 
 -- Inserts Tuitions for students enrolled in Intelligenza Artificiale course
 create or replace PROCEDURE PopulateTuition AS
@@ -112,7 +112,7 @@ BEGIN
     COMMIT;
 
 END;
-
+/
 
 
 
@@ -147,4 +147,4 @@ BEGIN
     COMMIT;
 
 END;
-
+/
