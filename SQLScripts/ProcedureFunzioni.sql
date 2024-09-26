@@ -39,7 +39,7 @@ BEGIN
         CLOSE unpaid_tuition_cur;
     END IF;
 END;
-
+/
 
 -- Insertion of a new exam as the average of the Assignments votes for the same course
 create or replace PROCEDURE CreateExamForEnrollment (
@@ -82,7 +82,7 @@ BEGIN
 
     DBMS_OUTPUT.PUT_LINE('Nuova riga inserita nella tabella Exam con media: ' || avgMark);
 END;
-
+/
 
 
 create or replace PROCEDURE DeleteAssociatedEnrollmentsProc(p_matriculation VARCHAR2) IS
@@ -90,7 +90,7 @@ BEGIN
     DELETE FROM Enrollment
     WHERE DEREF(student).matriculation = p_matriculation;
 END;
-
+/
 
 create or replace TYPE MatriculationArrayType AS VARRAY(1000) OF CHAR(6);
 
@@ -106,7 +106,7 @@ BEGIN
 
     p_matriculations := v_matriculation;
 END;
-
+/
 
 
 create or replace PROCEDURE GetMatriculationsInf(p_matriculations OUT MatriculationArrayType) AS
@@ -125,7 +125,7 @@ BEGIN
 
     p_matriculations := v_matriculation;
 END;
-
+/
 
 create or replace PROCEDURE GetMatriculationsMed(p_matriculations OUT MatriculationArrayType) AS
     v_matriculation MatriculationArrayType := MatriculationArrayType();
@@ -143,7 +143,7 @@ BEGIN
 
     p_matriculations := v_matriculation;
 END;
-
+/
 
 
 create or replace FUNCTION GenerateRandomEmail RETURN VARCHAR2 IS
@@ -154,7 +154,7 @@ BEGIN
 
     RETURN random_part || '@studenti.unidi';
 END;
-
+/
 
 create or replace FUNCTION GenerateRandomMemberEmail RETURN VARCHAR2 IS
     random_part VARCHAR2(20);
@@ -164,7 +164,7 @@ BEGIN
 
     RETURN random_part || '@unidi.it';
 END;
-
+/
 
 
 
@@ -225,7 +225,7 @@ BEGIN
     
     CLOSE professor_cur;
 END;
-
+/
 
 
 
@@ -244,7 +244,7 @@ BEGIN
 
     RETURN proj_cursor;
 END;
-
+/
 
 
 create or replace PROCEDURE PrintResearchProjects
@@ -272,7 +272,7 @@ BEGIN
 
     CLOSE proj_cursor;
 END;
-
+/
 
 
 create or replace FUNCTION CheckPrerequisiteFunction(
@@ -308,7 +308,7 @@ EXCEPTION
     WHEN OTHERS THEN
         RETURN 'f';
 END;
-
+/
 
 
 
@@ -325,7 +325,7 @@ BEGIN
 
     RETURN NVL(total_credits, 0);  
 END;
-
+/
 
 
 
@@ -349,7 +349,7 @@ EXCEPTION
     WHEN OTHERS THEN
         RAISE_APPLICATION_ERROR(-20001, 'Error retrieving department name');
 END GetDepartmentByEmailAndPassword;
-
+/
 
 
 
@@ -363,7 +363,7 @@ BEGIN
 
     RETURN total_members;
 END;
-
+/
 
 
 
@@ -376,3 +376,4 @@ BEGIN
 
 	RETURN total_students;
 END;
+/
