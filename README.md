@@ -103,8 +103,6 @@ The file [SQLScripts/DefinizioneTrigger.sql](SQLScripts/DefinizioneTrigger.sql) 
 - **CheckTuitionCoherence**: Similar to CCheckExamPassedCoherence, constraints the possible values for Tuition.Paid.
 - **IsNowTeaching**: after the creation of a course, if the member inserted as a teacher was not previously a teacher, its flag in the Member tables becames 't'.
 - **ModifyCourseNullPrerequisites**: this trigger corrects the possible mistake that can be performed caused by my definition in the Course table of Prerequisites, since many operations are performed on this array, and transforms all the `NULL` values inserted in the place of Prerequisites into an empty array of CourseArrayType.
-- **NotDoubleInsertionInEnrollment**: (CAUSES MUTATING TABLES) does not allow a tuple inside Enrollment table to have the same couple (course, student).
-- **NotDoubleInsertionInExtra**: (CAUSES MUTATING TABLES) does not allow a tuple inside EnrolledInExtra table to have the same couple (course, student).
 
 Moreover, the following triggers have been added since despite the `NOT NULL` connstraint and the `REF` relationships, the elimination of some tuple being referenced by another table does not cause the elimination of the corresponding tuple in the table which references it.
 - **DeleteAssignmentAfterEnrollment**
